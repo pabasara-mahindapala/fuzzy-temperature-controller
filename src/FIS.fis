@@ -1,0 +1,45 @@
+[System]
+Name='FIS'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Error'
+Range=[-35 35]
+NumMFs=7
+MF1='HighNegative':'trimf',[-46.66 -35 -23.33]
+MF2='MediumNegative':'trimf',[-35 -23.33 -11.67]
+MF3='LowNegative':'trimf',[-23.33 -11.67 0]
+MF4='Zero':'trimf',[-11.67 0 11.67]
+MF5='LowPositive':'trimf',[0 11.67 23.35]
+MF6='MediumPositive':'trimf',[11.67 23.35 35]
+MF7='HighPositive':'trimf',[23.35 35 46.65]
+
+[Output1]
+Name='Duty'
+Range=[-15 15]
+NumMFs=7
+MF1='HighNegative':'trimf',[-20 -15 -10]
+MF2='MediumNegative':'trimf',[-15 -10 -5]
+MF3='LowNegative':'trimf',[-10 -5 0]
+MF4='Zero':'trimf',[-5 -5.551e-17 5]
+MF5='LowPositive':'trimf',[0 5 10]
+MF6='MediumPositive':'trimf',[5 10 15]
+MF7='HighPositive':'trimf',[10 15 20]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 4 (1) : 1
+5, 5 (1) : 1
+6, 6 (1) : 1
+7, 7 (1) : 1
